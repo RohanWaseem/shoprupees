@@ -5,9 +5,11 @@ const Userrights = () => {
     const [role , setRole] = useState("")
 
 
+     const API = import.meta.env.VITE_API_URL;
+     
     const handlerole =async(allowedpage)=>{
 try {
-    const res = await fetch("http://localhost:5000/userright",{
+    const res = await fetch(`${API}/userright`,{
         method:"POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify({role , allowedpage})

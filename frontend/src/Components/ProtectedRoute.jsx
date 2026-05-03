@@ -5,6 +5,7 @@ const ProtectedRoute = ({ allowedpage, children }) => {
   const navigate = useNavigate();
 
   const token = localStorage.getItem("token");
+   const API = import.meta.env.VITE_API_URL;
 
   const [allowed, setAllowed] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -16,11 +17,11 @@ const ProtectedRoute = ({ allowedpage, children }) => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/ProtectedRoute", {
+      const res = await fetch(`${API}/ProtectedRoute`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`, // ✅ important
+          Authorization: `Bearer ${token}`, // ✅ important  ProtectedRoute
         },
         body: JSON.stringify({ allowedpage }),
       });

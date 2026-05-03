@@ -4,6 +4,10 @@ import { Link , useNavigate } from 'react-router-dom'
 
 const Login = () => {
 
+  const API = import.meta.env.VITE_API_URL;
+
+  
+
 
   const navigate = useNavigate()
       const [phone , setPhone] = useState("")
@@ -13,7 +17,7 @@ const Login = () => {
         const handlelogin =async(e)=>{
             e.preventDefault()
             try {
-              const res = await fetch("http://localhost:5000/login",{
+              const res = await fetch("`${API}/login`",{
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify({phone , password})
@@ -55,6 +59,8 @@ else{
 <div className='flex justify-center mt-2'>
        <h1>Don't have an Account? <Link to="/register"><span className='text-blue-600 font-bold'>Register</span></Link></h1></div>
       </form>
+
+      
 
       </div>
     </div>

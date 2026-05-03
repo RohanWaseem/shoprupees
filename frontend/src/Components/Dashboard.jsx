@@ -8,7 +8,7 @@ const Dashboard = () => {
   const [menu , setMenu] = useState(false)
 const [getdatas , setGetdatas] =  useState([])
 
-
+const API = import.meta.env.VITE_API_URL;
   const handlemenu =()=>{
 setMenu(true)
   }
@@ -30,7 +30,7 @@ setMenu(true)
 
   const axiosdata =async()=>{
 try {
-    await axios.get("http://localhost:5000/getdata")
+    await axios.get(`${API}/getdata`)
     .then((res)=>setGetdatas(res.data.data))
     .catch((err)=>console.error(err))
 } catch (error) {
