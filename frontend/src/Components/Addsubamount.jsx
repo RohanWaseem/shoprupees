@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import Menu from "../assets/menu.png"
 
 
-const addsubamount = () => {
+const Addsubamount = () => {
 const [handlesubmit , setHandlesubmit] = useState(false)
 const [withdrawmoney , setWithdrawmoney] =  useState(false)
 const [create, setCreate]=useState(false)
@@ -529,4 +529,4 @@ try {
   );
 };
 
-export default addsubamount;
+export default Addsubamount;

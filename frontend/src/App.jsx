@@ -4,7 +4,7 @@ import {BrowserRouter , Routes ,Route}  from "react-router-dom"
 import Login from './Components/Login'
 import Register from './Components/Register'
 import Dashboard from './Components/Dashboard'
-import Addsubamount from './Components/addsubamount'
+import Addsubamount from './Components/Addsubamount'
 import Userrights from './Components/Userrights'
 import Unauthorize from './Components/Unauthorize'
 import ProtectedRoute from './Components/ProtectedRoute'
